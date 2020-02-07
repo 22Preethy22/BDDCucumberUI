@@ -37,7 +37,7 @@ Then I validated the response
 Scenario: validate POST Request for employee rervice api
 Given I get employee service api endpoint
 When Post the request with following data
-|"id"|"21"|
+        |"id"|"21"|
 		|"employee_name"|"Ankita"|
 		|"employee_salary"| "400000"|
 		|"employee_age"|"16"|
