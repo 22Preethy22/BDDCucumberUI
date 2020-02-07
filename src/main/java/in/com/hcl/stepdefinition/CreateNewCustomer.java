@@ -3,6 +3,7 @@ package in.com.hcl.stepdefinition;
 import static io.restassured.RestAssured.given;
 
 import java.util.List;
+import java.util.Map;
 
 import org.json.simple.JSONObject;
 import org.junit.Assert;
@@ -15,6 +16,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import com.sun.corba.se.impl.javax.rmi.CORBA.Util;
 
+import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -24,6 +26,7 @@ import in.com.hcl.util.ScreenShot;
 import in.com.hcl.util.WebDriver_Generic;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.http.Method;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -56,7 +59,7 @@ public class CreateNewCustomer {
 	public void navigate_to_Orange_Everyday_bank_account() {
 		in.com.hcl.util.WebDriver_Generic.Driver_wait(driver, 10);
 		CreateEveryDayNewCustomer NewCustomerobj = PageFactory.initElements(driver, CreateEveryDayNewCustomer.class);
-		CreateEveryDayNewCustomer NewCustomer=new CreateEveryDayNewCustomer(driver);
+		//CreateEveryDayNewCustomer NewCustomer=new CreateEveryDayNewCustomer(driver);
 		/*//driver.findElement(By.xpath("//a//span[contains(text(),'Bank ')]")).click();
 		login.BankSave();
 		// driver.findElement(ConfigFileReader.getlocator("Bank&save")).click();
@@ -74,18 +77,18 @@ public class CreateNewCustomer {
 	@When("^Click on Open Now button$")
 	public void click_on_Open_Now_button() {
 		CreateEveryDayNewCustomer NewCustomerobj = PageFactory.initElements(driver, CreateEveryDayNewCustomer.class);
-		CreateEveryDayNewCustomer NewCustomer=new CreateEveryDayNewCustomer(driver);
-		driver.findElement(By.xpath("//section/div[2]//a[contains(text(),'Open now')]")).click();
-		//NewCustomerobj.click_on_Open_Now_button();
+		//CreateEveryDayNewCustomer NewCustomer=new CreateEveryDayNewCustomer(driver);
+		//driver.findElement(By.xpath("//section/div[2]//a[contains(text(),'Open now')]")).click();
+		NewCustomerobj.click_on_Open_Now_button();
 		System.out.println("Successfully clicked on open now button");
 	}
 
 	@When("^Click on New Custmer button$")
 	public void click_on_New_Custmer_button() {
 		CreateEveryDayNewCustomer NewCustomerobj = PageFactory.initElements(driver, CreateEveryDayNewCustomer.class);
-		CreateEveryDayNewCustomer NewCustomer=new CreateEveryDayNewCustomer(driver);
-		driver.findElement(By.xpath("//a[contains(text(),'New customer')]")).click();
-		//NewCustomerobj.click_on_New_Custmer_button();
+		//CreateEveryDayNewCustomer NewCustomer=new CreateEveryDayNewCustomer(driver);
+		//driver.findElement(By.xpath("//a[contains(text(),'New customer')]")).click();
+		NewCustomerobj.click_on_New_Custmer_button();
 		System.out.println("Successfully clicked on new customer button");
 
 	}
@@ -134,6 +137,57 @@ String Open_Now ="//section/div[2]//a[contains(text(),'Open now')]";
 		System.out.println("Successfully clicked on open now button");
 	    
 	}
+
+//utilities.ConfigFileReader configFileReader;
+RequestSpecification request=null;
+Response response=null;
+
+// *****************************************API
+// methods************************************************************
+@Given("^I get employee api endpoint$")
+public void Post_customer_Endpoint() {
+	RestAssured.baseURI = "http://dummy.restapiexample.com/api/v1";
+	request = RestAssured.given();
+	System.out.println("get URL:" + RestAssured.baseURI);
+}
+
+@Then("^validate the response$")
+public void validate_response() throws Throwable {
+	int statusCode = response.getStatusCode();
+	Assert.assertEquals("the post was unsuccessful", statusCode, 200);
+	System.out.println("Response body: " + response.body().asString());
+}
+
+@SuppressWarnings("unchecked")
+@When("^Post the request with following$")
+public void post_with_following(DataTable field) throws Throwable {
+	Map<String, String> testData = field.asMap(String.class, String.class);
+	// request = RestAssured.given();
+	
+	JSONObject requestParams = new JSONObject();
+	requestParams.put("name", testData.get("emp_name"));
+	requestParams.put("salary", testData.get("employee_salary"));
+	requestParams.put("age", testData.get("employee_age"));
+	// requestParams.put("profile_image", "");
+	request.header("Content-Type", "application/json");
+	//// Add the Json to the body of the request
+	request.body(requestParams.toJSONString());
+	response = request.post("/create");
+}
+@When("^I get Request$")
+public void sendGetRequest() {
+	//System.out.println("Response body in GET Request: " + response.body().asString());
+	//String id1=response.jsonPath().getString("data.id");
+	//System.out.println(RestAssured.baseURI + "/employee/"+id1);
+	//response = RestAssured.given().contentType(ContentType.JSON).accept(ContentType.JSON).when()
+		//	.get("/employee/2");
+	RestAssured.baseURI="http://dummy.restapiexample.com/api/v1/employee";
+	RequestSpecification httpRequest = RestAssured.given();
+			response = httpRequest.request(Method.GET,"/2");
+
+
+	System.out.println(response.getBody().asString());
+}
 
 
 }
