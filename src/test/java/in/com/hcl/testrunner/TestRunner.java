@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)	
 @CucumberOptions(
-features = "src/test/resources/feature",
+features = "src/test/resources/in.com.hcl.feature",
 plugin = {"pretty","html:testOutput/cucumber.html","json:testOutput/cucumber.json"},
 tags="@UItest",
 //features = "features",

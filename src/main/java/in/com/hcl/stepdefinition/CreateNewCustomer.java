@@ -8,6 +8,7 @@ import java.util.Map;
 import org.json.simple.JSONObject;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -80,7 +81,7 @@ public class CreateNewCustomer {
 		//CreateEveryDayNewCustomer NewCustomer=new CreateEveryDayNewCustomer(driver);
 		//driver.findElement(By.xpath("//section/div[2]//a[contains(text(),'Open now')]")).click();
 		NewCustomerobj.click_on_Open_Now_button();
-		System.out.println("Successfully clicked on open now button");
+		//System.out.println("Successfully clicked on open now button");
 	}
 
 	@When("^Click on New Custmer button$")
@@ -88,7 +89,11 @@ public class CreateNewCustomer {
 		CreateEveryDayNewCustomer NewCustomerobj = PageFactory.initElements(driver, CreateEveryDayNewCustomer.class);
 		//CreateEveryDayNewCustomer NewCustomer=new CreateEveryDayNewCustomer(driver);
 		//driver.findElement(By.xpath("//a[contains(text(),'New customer')]")).click();
-		NewCustomerobj.click_on_New_Custmer_button();
+		WebElement Eleobj = driver.findElement(By.xpath("//a[contains(text(),'New customer')]"));
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", Eleobj);	
+		
+		//NewCustomerobj.click_on_New_Custmer_button();
 		System.out.println("Successfully clicked on new customer button");
 
 	}
@@ -122,6 +127,12 @@ public class CreateNewCustomer {
 	
 
 	}
+	@When("^Click on Continue button$")
+	public void click_on_Continue_button(){
+	    
+	}
+
+	
 	
 //////PPPPPP**********************************2/6*****************
 String Open_Now ="//section/div[2]//a[contains(text(),'Open now')]";

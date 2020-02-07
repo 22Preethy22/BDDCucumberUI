@@ -12,7 +12,7 @@
         "steps": [
           {
             "result": {
-              "duration": 38498341974,
+              "duration": 20749013689,
               "status": "passed"
             },
             "line": 4,
@@ -24,7 +24,7 @@
           },
           {
             "result": {
-              "duration": 8633701651,
+              "duration": 7670644147,
               "status": "passed"
             },
             "line": 5,
@@ -36,7 +36,7 @@
           },
           {
             "result": {
-              "duration": 185794508,
+              "duration": 199990557,
               "status": "passed"
             },
             "comments": [
@@ -54,11 +54,22 @@
           },
           {
             "result": {
-              "duration": 10089527726,
-              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id\u003d\u0027singleOrJointButtons\u0027]//label[contains(text(),\u0027Single\u0027)]\"}\n  (Session info: chrome\u003d79.0.3945.130)\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.14.0\u0027, revision: \u0027aacccce0\u0027, time: \u00272018-08-02T20:19:58.91Z\u0027\nSystem info: host: \u0027LP-5CD9174BD1\u0027, ip: \u0027192.168.43.139\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_102\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\\Users\\ankitasr\\AppData\\L...}, goog:chromeOptions: {debuggerAddress: localhost:53492}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}\nSession ID: d1b085065312b36dc00a86d21d9ee1ef\n*** Element info: {Using\u003dxpath, value\u003d//*[@id\u003d\u0027singleOrJointButtons\u0027]//label[contains(text(),\u0027Single\u0027)]}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)\r\n\tat in.com.hcl.stepdefinition.CreateNewCustomer.fill_the_form_Details(CreateNewCustomer.java:99)\r\n\tat ✽.And Fill the form Details(in.com.hcl.INGSubmitForm.feature:8)\r\n",
-              "status": "failed"
+              "duration": 62074914112,
+              "status": "passed"
             },
             "line": 8,
+            "name": "Click on New Custmer button",
+            "match": {
+              "location": "CreateNewCustomer.click_on_New_Custmer_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3031564791,
+              "status": "passed"
+            },
+            "line": 9,
             "name": "Fill the form Details",
             "match": {
               "location": "CreateNewCustomer.fill_the_form_Details()"
@@ -67,19 +78,11 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "status": "undefined"
             },
-            "line": 9,
-            "name": "Click on \"Continue\" button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Continue",
-                  "offset": 10
-                }
-              ],
-              "location": "CreateNewCustomer.click_on_button(String)"
-            },
+            "line": 10,
+            "name": "Click on Continue button",
+            "match": {},
             "keyword": "And "
           }
         ],
