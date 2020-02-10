@@ -12,7 +12,7 @@
         "steps": [
           {
             "result": {
-              "duration": 29326778787,
+              "duration": 76546169957,
               "status": "passed"
             },
             "line": 4,
@@ -24,46 +24,124 @@
           },
           {
             "result": {
-              "duration": 12127264960,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "Navigate to Orange Everyday bank account",
-            "match": {
-              "location": "CreateNewCustomer.navigate_to_Orange_Everyday_bank_account()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 236685586,
+              "duration": 15308707418,
               "status": "passed"
             },
             "comments": [
               {
+                "line": 5,
+                "value": "#When Navigate to Orange Everyday bank account"
+              },
+              {
                 "line": 6,
                 "value": "#now filling the form"
+              },
+              {
+                "line": 7,
+                "value": "#And Click on Open Now button"
               }
             ],
-            "line": 7,
-            "name": "Click on Open Now button",
+            "line": 8,
+            "name": "Fill the form Details",
             "match": {
-              "location": "CreateNewCustomer.click_on_Open_Now_button()"
+              "location": "CreateNewCustomer.fill_the_form_Details(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "country",
+                  "INDIA"
+                ],
+                "line": 9
+              },
+              {
+                "comments": [
+                  {
+                    "line": 10,
+                    "value": "#|title|Mr|"
+                  }
+                ],
+                "cells": [
+                  "givenName",
+                  "John"
+                ],
+                "line": 11
+              },
+              {
+                "cells": [
+                  "familyName",
+                  "Smith"
+                ],
+                "line": 12
+              },
+              {
+                "cells": [
+                  "emailAddress",
+                  "jsmith@test.com"
+                ],
+                "line": 13
+              },
+              {
+                "cells": [
+                  "mobile",
+                  "0465789765"
+                ],
+                "line": 14
+              },
+              {
+                "cells": [
+                  "dateOfBirth(dd/mm/yyyy)",
+                  "19/03/1995"
+                ],
+                "line": 15
+              },
+              {
+                "cells": [
+                  "placeOfBirth",
+                  "QueensLand"
+                ],
+                "line": 16
+              },
+              {
+                "cells": [
+                  "address",
+                  "65 Keehner Entrance , MARTIN WA 6110"
+                ],
+                "line": 17
+              },
+              {
+                "cells": [
+                  "SecurityQues",
+                  "queen"
+                ],
+                "line": 18
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 172499465,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "Click on Continue button",
+            "match": {
+              "location": "CreateNewCustomer.click_on_Continue_button()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 10223213732,
-              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id\u003d\u0027singleOrJointButtons\u0027]//label[contains(text(),\u0027Single\u0027)]\"}\n  (Session info: chrome\u003d79.0.3945.130)\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.14.0\u0027, revision: \u0027aacccce0\u0027, time: \u00272018-08-02T20:19:58.91Z\u0027\nSystem info: host: \u0027LP-5CD9174BD1\u0027, ip: \u002710.138.248.87\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_102\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\\Users\\ankitasr\\AppData\\L...}, goog:chromeOptions: {debuggerAddress: localhost:59188}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}\nSession ID: eae7721f9ed4f9b1364172f1b6964fdb\n*** Element info: {Using\u003dxpath, value\u003d//*[@id\u003d\u0027singleOrJointButtons\u0027]//label[contains(text(),\u0027Single\u0027)]}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)\r\n\tat in.com.hcl.stepdefinition.CreateNewCustomer.fill_the_form_Details(CreateNewCustomer.java:96)\r\n\tat ✽.And Fill the form Details(in.com.hcl.INGSubmitForm.feature:8)\r\n",
-              "status": "failed"
+              "duration": 30206,
+              "status": "passed"
             },
-            "line": 8,
-            "name": "Fill the form Details",
+            "line": 21,
+            "name": "Validate the Success Message",
             "match": {
-              "location": "CreateNewCustomer.fill_the_form_Details()"
+              "location": "CreateNewCustomer.validate_the_Success_Message()"
             },
-            "keyword": "And "
+            "keyword": "Then "
           }
         ],
         "tags": [
