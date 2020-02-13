@@ -12,7 +12,7 @@
         "steps": [
           {
             "result": {
-              "duration": 76546169957,
+              "duration": 15993664202,
               "status": "passed"
             },
             "line": 4,
@@ -24,24 +24,11 @@
           },
           {
             "result": {
-              "duration": 15308707418,
-              "status": "passed"
+              "duration": 1895787072,
+              "error_message": "java.lang.NullPointerException\r\n\tat org.openqa.selenium.support.events.EventFiringWebDriver.extractInterfaces(EventFiringWebDriver.java:120)\r\n\tat org.openqa.selenium.support.events.EventFiringWebDriver.access$300(EventFiringWebDriver.java:69)\r\n\tat org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement.\u003cinit\u003e(EventFiringWebDriver.java:397)\r\n\tat org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement.\u003cinit\u003e(EventFiringWebDriver.java:389)\r\n\tat org.openqa.selenium.support.events.EventFiringWebDriver.createWebElement(EventFiringWebDriver.java:327)\r\n\tat org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:196)\r\n\tat com.hcl.demo.utilities.Utility.selectRadioButtonResponse(Utility.java:15)\r\n\tat com.hcl.demo.pages.CreateEveryDayNewCustomerPage.fillDetailsInOrangeEverydayPage(CreateEveryDayNewCustomerPage.java:166)\r\n\tat com.hcl.demo.stepdefinition.CreateNewCustomer.fill_the_form_Details(CreateNewCustomer.java:54)\r\n\tat ✽.When Fill the form Details(src/test/java/com/hcl/demo/feature/UITest.feature:5)\r\n",
+              "status": "failed"
             },
-            "comments": [
-              {
-                "line": 5,
-                "value": "#When Navigate to Orange Everyday bank account"
-              },
-              {
-                "line": 6,
-                "value": "#now filling the form"
-              },
-              {
-                "line": 7,
-                "value": "#And Click on Open Now button"
-              }
-            ],
-            "line": 8,
+            "line": 5,
             "name": "Fill the form Details",
             "match": {
               "location": "CreateNewCustomer.fill_the_form_Details(DataTable)"
@@ -49,82 +36,44 @@
             "rows": [
               {
                 "cells": [
-                  "country",
-                  "INDIA"
-                ],
-                "line": 9
-              },
-              {
-                "comments": [
-                  {
-                    "line": 10,
-                    "value": "#|title|Mr|"
-                  }
-                ],
-                "cells": [
+                  "nationality",
+                  "title",
                   "givenName",
-                  "John"
-                ],
-                "line": 11
-              },
-              {
-                "cells": [
                   "familyName",
-                  "Smith"
-                ],
-                "line": 12
-              },
-              {
-                "cells": [
                   "emailAddress",
-                  "jsmith@test.com"
-                ],
-                "line": 13
-              },
-              {
-                "cells": [
                   "mobile",
-                  "0465789765"
-                ],
-                "line": 14
-              },
-              {
-                "cells": [
                   "dateOfBirth(dd/mm/yyyy)",
-                  "19/03/1995"
-                ],
-                "line": 15
-              },
-              {
-                "cells": [
                   "placeOfBirth",
-                  "QueensLand"
-                ],
-                "line": 16
-              },
-              {
-                "cells": [
+                  "countryOfBirth",
                   "address",
-                  "65 Keehner Entrance , MARTIN WA 6110"
+                  "SecurityQues"
                 ],
-                "line": 17
+                "line": 6
               },
               {
                 "cells": [
-                  "SecurityQues",
+                  "India",
+                  "Mr",
+                  "Smith",
+                  "jsmith@test.com",
+                  "jsmith@test.com",
+                  "0403422132",
+                  "05/12/1992",
+                  "QueensLand",
+                  "India",
+                  "65 Keehner Entrance , MARTIN WA 6110",
                   "queen"
                 ],
-                "line": 18
+                "line": 7
               }
             ],
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 172499465,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 20,
+            "line": 8,
             "name": "Click on Continue button",
             "match": {
               "location": "CreateNewCustomer.click_on_Continue_button()"
@@ -133,10 +82,9 @@
           },
           {
             "result": {
-              "duration": 30206,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 21,
+            "line": 9,
             "name": "Validate the Success Message",
             "match": {
               "location": "CreateNewCustomer.validate_the_Success_Message()"
@@ -156,6 +104,6 @@
     "description": "",
     "id": "create-new-ing-customer",
     "keyword": "Feature",
-    "uri": "in.com.hcl.INGSubmitForm.feature"
+    "uri": "src/test/java/com/hcl/demo/feature/UITest.feature"
   }
 ]
